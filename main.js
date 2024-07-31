@@ -10,9 +10,8 @@ function createWindow() {
     },
   });
 
-  // Load from local server
-  mainWindow.loadURL('http://localhost:5000');
-  mainWindow.webContents.openDevTools();
+  mainWindow.loadFile(path.join(__dirname, 'client', 'build', 'index.html'));
+  mainWindow.webContents.openDevTools(); // Open DevTools for debugging
 }
 
 app.on('ready', createWindow);
